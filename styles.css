@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+h1 {
+    color: #F76900;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    gap: 5px;
+    margin: 20px auto;
+}
+.cell {
+    width: 120px;
+    height: 120px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+    font-size: 14px;
+}
+.selected {
+    background-color: #004E89;
+    color: white;
+}
+.highlighted {
+    background-color: bisque;
+}
+.labels {
+    margin: 10px auto;
+    width: fit-content;
+}
+.row-labels {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin-top: -60px;
+    margin-right: 10px;
+}
+.col-labels {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-left: 93px;
+}
+.col {
+    margin-right: 90px;
+    justify-self: center;
+}
+.row {
+    margin-top: 120px;
+    justify-self: center;
+}
+
+
+.input-container {
+    margin: 20px auto;
+    width: fit-content;
+}
+#playerInput {
+    width: 200px;
+    padding: 5px;
+    font-size: 16px;
+}
+#suggestions {
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 200px;
+    display: none;
+}
+.suggestion {
+    padding: 5px;
+    cursor: pointer;
+}
+.suggestion:hover {
+    background-color: #f0f0f0;
+}
+#guesses {
+    font-size: 18px;
+    margin: 10px;
+}
