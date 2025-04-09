@@ -9,7 +9,7 @@ if (gridContainer) {
     }
 }
 
-let guesses = 0;
+let guesses = 9;
 document.getElementById("guesses").textContent = guesses;
 
 const cells = document.querySelectorAll(".cell");
@@ -40,15 +40,22 @@ if (document.getElementById("r2")) {
 
 cells.forEach(cell => {
     cell.addEventListener("click", function () {
+        inputContainer.classList.remove('hidden');
         playerInput.focus();
         playerInput.dataset.selectedCell = this.dataset.index;
     });
 });
 
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' || e.key == 'Enter') {
+        inputContainer.classList.add('hidden');
+    }
+});
+
 if (playerInput) {
     playerInput.addEventListener("keypress", function (event) {
-        if (event.key === "Enter") {
-            guesses++;
+        if (event.key === "Enter" && this.value != "") {
+            guesses--;
             document.getElementById("guesses").textContent = guesses;
             const selectedCellIndex = this.dataset.selectedCell;
             if (selectedCellIndex !== undefined) {

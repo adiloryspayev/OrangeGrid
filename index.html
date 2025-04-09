@@ -6,24 +6,28 @@
     <title>Syracuse Basketball Immaculate Grid</title>
 </head>
 <body>
-    <h1>Syracuse Basketball Immaculate Grid</h1>
-    <div>Guess count: </div><div id="guesses"></div></div>
-    <div class="labels">
-        <div class="col-labels" id="colLabels">
-            <div class="col" id="c0"></div>
-            <div class="col" id="c1"></div>
-            <div class="col" id="c2"></div>
+    <h1>Orange Grid</h1>
+    <h3>Syracuse Mens Basketball</h3>
+    <div class="main-container">
+        <div class="labels">
+            <div class="col-labels" id="colLabels">
+                <div class="col" id="c0"></div>
+                <div class="col" id="c1"></div>
+                <div class="col" id="c2"></div>
+            </div>
+            <div class="row-labels" id="rowLabels">
+                <div class="row" id="r0"></div>
+                <div class="row" id="r1"></div>
+                <div class="row" id="r2"></div>
+            </div>
+            <div class="grid-container" id="grid"></div>
         </div>
-        <div class="row-labels" id="rowLabels">
-            <div class="row" id="r0"></div>
-            <div class="row" id="r1"></div>
-            <div class="row" id="r2"></div>
-        </div>
-        <div class="grid-container" id="grid">
-
+        <div class="guess-counter">
+            <div>Guess count</div>
+            <div id="guesses">0</div>
         </div>
     </div>
-    <div class="input-container">
+    <div class="input-container hidden" id="inputContainer">
         <input type="text" id="playerInput" placeholder="Enter player name">
         <div id="suggestions"></div>
     </div>
