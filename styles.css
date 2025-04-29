@@ -91,6 +91,12 @@ h1 {
 .input-container.hidden {
     display: none;
 }
+
+.rarity {
+    color: rgb(131, 131, 255);
+    font-size: large;
+}
+
 #playerInput {
     width: 200px;
     padding: 5px;
@@ -115,3 +121,4 @@ h1 {
     font-size: 48px;
     margin: 10px;
 }
+
