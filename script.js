@@ -1,4 +1,7 @@
 const gridContainer = document.getElementById('grid');
+const playerGuesses = new Map();;
+const guesses_for_rarity = document.getElementById("guesses_for_rarity");
+
 
 if (gridContainer) {
     for (let i = 0; i < 9; i++) {
@@ -11,6 +14,9 @@ if (gridContainer) {
 
 let guesses = 9;
 document.getElementById("guesses").textContent = guesses;
+
+let rarity = 100;
+document.getElementById("rarity").textContent = rarity;
 
 const cells = document.querySelectorAll(".cell");
 const playerInput = document.getElementById("playerInput");
@@ -70,16 +76,45 @@ if (playerInput) {
 
                 // if correct, push player name/picture onto cell
                 // selectedCategories.push(____)
+
+
+                if(playerGuesses.has(this.value)) {
+                    playerGuesses.set(this.value, playerGuesses.get(this.value)+1);
+                }
+                else {
+                    playerGuesses.set(this.value, 0);
+                }
+
+
+
+                // guesses_for_rarity = "red";
+                // document.getElementById("guesses_for_rarity") = this.value;
+
+                let rarityChange = 0;
+                let text = "[";
+                for (const x of playerGuesses.entries()) {
+                    text += "("+x+"), ";
+                    rarityChange += Array.from(x)[1];;
+                }
+                text = text.slice(0, -2) + "]";
+
+                document.getElementById("rarity").textContent = rarity-rarityChange;
+
+                guesses_for_rarity.textContent = text;
+
+
                 selectedCategories.push(this.value);
                 selectedCategories.push(cols[index%3]);
                 selectedCategories.push(rows[(index-(index%3))/3]);
 
                 cells[selectedCellIndex].textContent = selectedCategories.join(", ");
                 this.value = ""; // Clear input field
+
             }
         }
     });
 }
+
 
 
 
